@@ -1,9 +1,18 @@
-// Input.js
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Input = ({ type, placeholder, value, onChange, margin, padding, borderRadius, backgroundColor, color }) => {
+const Input = ({
+  type,
+  placeholder,
+  value,
+  onChange,
+  margin,
+  padding,
+  borderRadius,
+  backgroundColor,
+  color,
+}) => {
   const inputStyle = {
     margin,
     padding,
@@ -16,8 +25,10 @@ const Input = ({ type, placeholder, value, onChange, margin, padding, borderRadi
     <input
       type={type}
       placeholder={placeholder}
+      value={value}
+      onChange={onChange}
       style={inputStyle}
-      className="custom-input"
+      className="form-control" // Bootstrap class for form control
     />
   );
 };

@@ -1,6 +1,7 @@
-
 import React from 'react';
 import '../App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Column = ({ children, padding, margin, borderRadius, backgroundColor, color, display }) => {
   const columnStyle = {
@@ -12,13 +13,13 @@ const Column = ({ children, padding, margin, borderRadius, backgroundColor, colo
     display: display,
   };
 
-  return <div className="column" style={columnStyle}>{children}</div>;
+  return <div className="col" style={columnStyle}>{children}</div>;
 };
 
 const Row = ({ children, padding, margin, borderRadius, backgroundColor, color }) => {
   const rowStyle = {
-    padding,
-    margin,
+    padding: '10px' || padding,
+    margin: '10px' || margin,
     borderRadius,
     backgroundColor,
     color,
@@ -50,7 +51,5 @@ const Card = ({ children, padding, margin, borderRadius, backgroundColor, color 
 
   return <div className="card" style={cardStyle}>{children}</div>;
 };
-
-
 
 export { Column, Row, Container, Card };

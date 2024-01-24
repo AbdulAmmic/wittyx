@@ -1,20 +1,32 @@
-// Button.js
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../App.css';
 
-const Button = ({ type, onClick, text, margin, padding, borderRadius, backgroundColor, color }) => {
+export default function Button ({
+  type,
+  onClick,
+  text,
+  margin,
+  padding,
+  borderRadius,
+  variant,
+  isLoading,
+}) {
   const buttonStyle = {
     margin,
     padding,
     borderRadius,
-    backgroundColor,
-    color,
   };
 
   return (
-    <button type={type} onClick={onClick} style={buttonStyle} className="custom-button">
-      {text}
+    <button
+      type={type}
+      onClick={onClick}
+      style={buttonStyle}
+      className={`btn btn-${variant} custom-button`}
+      disabled={isLoading}
+    >
+      {isLoading ? 'Loading...' : text}
     </button>
   );
 };
@@ -26,8 +38,8 @@ Button.propTypes = {
   margin: PropTypes.string,
   padding: PropTypes.string,
   borderRadius: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  color: PropTypes.string,
+  variant: PropTypes.string, // Bootstrap button variant (e.g., 'primary', 'secondary', 'success', etc.)
+  isLoading: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -35,8 +47,8 @@ Button.defaultProps = {
   margin: '0',
   padding: '8px 16px',
   borderRadius: '4px',
-  backgroundColor: '#007bff',
-  color: '#fff',
+  variant: 'primary', // Default Bootstrap variant
+  isLoading: false,
 };
 
-export default Button;
+

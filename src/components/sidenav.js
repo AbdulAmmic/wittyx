@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa'; 
+import { FaBars, FaTimes } from 'react-icons/fa';
 import '../App.css';
 
 const SideNav = ({ items, onItemClick, width, backgroundColor, color }) => {
@@ -14,6 +13,7 @@ const SideNav = ({ items, onItemClick, width, backgroundColor, color }) => {
     width: isOpen ? width : '0',
     backgroundColor,
     color,
+    transition: 'width 0.5s', 
   };
 
   const contentStyle = {
@@ -22,7 +22,7 @@ const SideNav = ({ items, onItemClick, width, backgroundColor, color }) => {
   };
 
   return (
-    <div>
+    <div className="d-flex">
       <div className={`sidenav-icon ${isOpen ? 'active' : ''}`} onClick={toggleSideNav}>
         {isOpen ? <FaTimes /> : <FaBars />}
       </div>
@@ -33,13 +33,9 @@ const SideNav = ({ items, onItemClick, width, backgroundColor, color }) => {
           </div>
         ))}
       </div>
-      <div className="content" style={contentStyle}>
-       
-      </div>
+     
     </div>
   );
 };
-
-
 
 export default SideNav;

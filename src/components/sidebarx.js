@@ -1,6 +1,6 @@
-// SidebarX.js
 import React, { useState } from 'react';
-import { FaArrowLeft, FaArrowRight, FaHome, FaInfo, FaCogs, FaBuilding } from 'react-icons/fa'; // Adjust with your desired icons
+import { FaArrowLeft, FaArrowRight, FaHome, FaInfo, FaCogs, FaBuilding } from 'react-icons/fa';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 
 const SidebarX = ({ items, onItemClick, backgroundColor, color }) => {
@@ -18,16 +18,12 @@ const SidebarX = ({ items, onItemClick, backgroundColor, color }) => {
         return <FaInfo />;
       case 'Services':
         return <FaCogs />;
-      
-        case 'Class':
+      case 'Class':
         return <FaBuilding />;
-
-    case 'Icon':
-        return <FaArrowLeft/>;
-
-        default:
-            return null;
-   
+      case 'Icon':
+        return <FaArrowLeft />;
+      default:
+        return null;
     }
   };
 
@@ -35,6 +31,7 @@ const SidebarX = ({ items, onItemClick, backgroundColor, color }) => {
     width: isOpen ? '250px' : '50px',
     backgroundColor,
     color,
+    transition: 'width 0.3s', // Add a transition for smoother width changes
   };
 
   return (
@@ -42,7 +39,7 @@ const SidebarX = ({ items, onItemClick, backgroundColor, color }) => {
       <div className={`sidebarx-icon ${isOpen ? 'active' : ''}`} onClick={toggleSidebar}>
         {isOpen ? <FaArrowLeft /> : <FaArrowRight />}
       </div>
-      <div className="sidebarx" style={sidebarStyle}>
+      <div className={`sidebarx bg-dark text-light ${isOpen ? 'open' : 'closed'}`} style={sidebarStyle}>
         {items.map((item, index) => (
           <div key={index} className="sidebarx-item" onClick={() => onItemClick(item)}>
             {isOpen ? (

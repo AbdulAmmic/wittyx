@@ -6,8 +6,8 @@ padding: 0;
 
 .card {
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 16px;
+  box-shadow: 0 4px 4px rgba(182, 180, 180, 0.1);
+  padding: 10px;
   border-radius: 8px;
   margin-bottom: 16px;
   box-sizing: border-box;
@@ -118,9 +118,10 @@ padding: 0;
   box-sizing: border-box;
 }
 .row {
-  display: flex;
+
   flex-wrap: wrap;
-  width: 100%;
+  max-width: 100%;
+
   /* justify-content: space-between; */
 }
 .column{
@@ -183,8 +184,22 @@ padding: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
-
+/* Table Style Custom */
+.table-div{
+  border: 1px solid rgb(211, 208, 208);
+  padding: 5px;
+}
+.table-div input{
+  float: right;
+  padding: 5px;
+  width: 20%;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+.table-div p{
+  margin-top: 3rem;
+}
 
 
 
